@@ -1,0 +1,92 @@
+# this is an example of the Uber API
+# as a demonstration of an API spec in YAML
+swagger: '2.0'
+info:
+  title: Test API
+  description: Test api for API Fuzzer project
+  version: "1.0.0"
+# the domain of the service
+host: api.test.socialradios.fr
+# array of all schemes that your API supports
+schemes:
+  - http
+produces:
+  - application/json
+paths:
+  /movie:
+    get:
+      description: |
+        Gets all movies
+      responses:
+        200:
+          description: Wrong country
+          schema:
+            title: movies
+            type: array
+            items:
+              $ref: '#/definitions/Movie'
+    put:
+      description: |
+        Creates a movie
+      parameters:
+        -
+          name: movie
+          in: body
+          description: Email adress
+          required: true
+          schema:
+            $ref: '#/definitions/Movie'
+      responses:
+        200:
+          description: Id of the new movie
+          schema:
+            title: message
+            type: string
+        401:
+          description: Bad input
+          schema:
+            title: error
+            type: string
+            
+  /movie/{id}:
+    get:
+      parameters:
+        -
+          name: id
+          in: path
+          description: Email adress
+          required: true
+          type: string
+
+      responses:
+        200:
+          description: Wrong country
+          schema:
+            title: movies
+            type: array
+            items:
+              $ref: '#/definitions/Movie'
+
+
+
+
+definitions:
+  Movie:
+    type: object
+    required:
+    - title
+    - rate
+    - producer
+    properties:
+      id:
+        type: integer
+        description: Title
+      title:
+        type: string
+        description: Title
+      rate:
+        type: integer
+        description: Rate
+      producer:
+        type: string
+        description: Producer

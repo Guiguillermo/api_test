@@ -1,0 +1,26 @@
+[
+	{
+		"id" : 1,
+		"title" : "The Godfather",
+		"rate" : 8,
+		"producer" : "Francis Ford Coppola"
+	},
+	{
+		"id" : 2,
+		"title" : "Moonrise Kingdom",
+		"rate" : 9,
+		"producer" : "Wes Anderson"
+	},
+	{
+		"id" : 3,
+		"title" : "Into the Wild",
+		"rate" : 9,
+		"producer" : "Sean Penn"
+	},
+	{
+		"id" : 4,
+		"title" : "Bienvenue chez les Ch'tis",
+		"rate" : 4,
+		"producer" : "Dany Boon"
+	}
+]
