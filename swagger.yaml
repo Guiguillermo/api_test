@@ -42,7 +42,7 @@ paths:
           schema:
             title: message
             type: string
-        401:
+        400:
           description: Bad input
           schema:
             title: error
