@@ -59,10 +59,7 @@ paths:
         200:
           description: Wrong country
           schema:
-            title: movies
-            type: array
-            items:
-              $ref: '#/definitions/Movie'
+            $ref: '#/definitions/Movie'
 
 
 
