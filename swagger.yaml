@@ -6,7 +6,7 @@ info:
   description: Test api for API Fuzzer project
   version: "1.0.0"
 # the domain of the service
-host: api.test.socialradios.fr
+host: apitest.socialradios.fr
 # array of all schemes that your API supports
 schemes:
   - http
@@ -32,7 +32,7 @@ paths:
         -
           name: movie
           in: body
-          description: Email adress
+          description: Movie
           required: true
           schema:
             $ref: '#/definitions/Movie'
@@ -40,14 +40,11 @@ paths:
         200:
           description: Id of the new movie
           schema:
-            title: message
-            type: string
+            $ref: '#/definitions/Message'
         400:
           description: Bad input
           schema:
-            title: error
-            type: string
-            
+            $ref: '#/definitions/Error'
   /movie/{id}:
     get:
       parameters:
@@ -90,3 +87,19 @@ definitions:
       producer:
         type: string
         description: Producer
+  Message:
+    type: object
+    required:
+    - message
+    properties:
+      message:
+        type: string
+        description: message
+  Error:
+    type: object
+    required:
+    - error
+    properties:
+      error:
+        type: string
+        description: error message
