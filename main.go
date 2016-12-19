@@ -16,6 +16,7 @@ func main() {
 	r.GET("/movie", GetMovies)
 	r.GET("/movie/:id", GetMovie)
 	r.PUT("/movie", PutMovie)
+	r.StaticFile("/swagger.yaml", "./swagger.yaml")
 
 	r.Run(":8080")
 
